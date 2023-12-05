@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.wrapper h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.button {
+    width: 100px;
+}
+
+.text {
+    color: blue;
+}
+
+.text-red {
+    color: red;
+}

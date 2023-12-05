@@ -1,0 +1,9 @@
+.main-wrapper {
+    margin: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.main-section {
+    padding: 1rem;
+}
