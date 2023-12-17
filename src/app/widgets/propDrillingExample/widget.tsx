@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import styles from './widget.module.css';
-import React, { useState } from 'react';
+import styles from "./widget.module.css";
+import React, { useState } from "react";
 
 const WidgetContent = ({ children }) => {
     return (
-        <div className={styles['content-wrapper']}>
+        <div className={styles["content-wrapper"]}>
             <p className={styles.content}>Widget Content</p>
             {children}
         </div>
@@ -25,7 +25,7 @@ const ButtonWrapper = ({ setCount }) => {
 };
 
 export default function Widget() {
-    console.log('component starts');
+    console.log("component starts");
     const [count, setCount] = useState(0);
 
     return (
@@ -33,9 +33,7 @@ export default function Widget() {
             <h1>propDrillingExample</h1>
             <div className={styles.count}>Count: {count}</div>
             <WidgetContent>
-                <ButtonWrapper
-                    setCount={() => setCount((count) => count + 1)}
-                />
+                <ButtonWrapper setCount={() => setCount((count) => count + 1)} />
             </WidgetContent>
         </div>
     );

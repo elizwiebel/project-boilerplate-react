@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import styles from './widget.module.css';
-import React, { useState } from 'react';
+import styles from "./widget.module.css";
+import React, { useState } from "react";
 
 export default function Widget() {
-    console.log('component starts');
+    console.log("component starts");
     const [inputText, setInputText] = useState(null);
 
     return (
@@ -12,12 +12,9 @@ export default function Widget() {
             <h1>onInputChangeRenderText</h1>
             <label>
                 Input:
-                <input
-                    type='text'
-                    onChange={(e) => setInputText(e.target.value)}
-                />
+                <input type="text" onChange={(e) => setInputText(e.target.value)} />
             </label>
-            <div>{inputText ?? 'Text will appear here'}</div>
+            <div>{inputText ?? "Text will appear here"}</div>
         </div>
     );
 }

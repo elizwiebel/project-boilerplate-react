@@ -1,24 +1,20 @@
-'use client';
+"use client";
 
-import styles from './widget.module.css';
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import styles from "./widget.module.css";
+import React, { createContext, useState, useContext, useEffect } from "react";
 
 const WidgetContext = createContext(null);
 
 const WidgetProvider = ({ children }) => {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState("light");
 
-    return (
-        <WidgetContext.Provider value={[theme, setTheme]}>
-            {children}
-        </WidgetContext.Provider>
-    );
+    return <WidgetContext.Provider value={[theme, setTheme]}>{children}</WidgetContext.Provider>;
 };
 
 const WidgetContent = () => {
-    console.log('component starts');
+    console.log("component starts");
     const [theme, setTheme] = useContext(WidgetContext);
-    console.log('theme', theme);
+    console.log("theme", theme);
 
     return <div>Widget Content</div>;
 };

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import styles from './widget.module.css';
-import React from 'react';
+import styles from "./widget.module.css";
+import React from "react";
 
 export default function Widget() {
-    console.log('component starts');
+    console.log("component starts");
 
     return (
         <div className={styles.wrapper}>

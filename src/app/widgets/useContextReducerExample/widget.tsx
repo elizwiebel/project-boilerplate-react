@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import styles from './widget.module.css';
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import styles from "./widget.module.css";
+import React, { createContext, useContext, useReducer, useEffect } from "react";
 
 const WidgetContext = createContext(null);
 
 const ACTIONS = {
-    UPDATE_THEME: 'update_theme',
+    UPDATE_THEME: "update_theme",
 };
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'update_theme': {
-            console.log('update_theme action.payload', action.payload);
+        case "update_theme": {
+            console.log("update_theme action.payload", action.payload);
             return {
                 ...state,
                 theme: action.payload,
@@ -25,26 +25,22 @@ const reducer = (state, action) => {
 
 const WidgetProvider = ({ children }) => {
     const initialState = {
-        theme: 'light',
-        themeStyle: 'compact',
+        theme: "light",
+        themeStyle: "compact",
     };
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    return (
-        <WidgetContext.Provider value={[state, dispatch]}>
-            {children}
-        </WidgetContext.Provider>
-    );
+    return <WidgetContext.Provider value={[state, dispatch]}>{children}</WidgetContext.Provider>;
 };
 
 const WidgetContent = () => {
-    console.log('component starts');
+    console.log("component starts");
     const [state, dispatch] = useContext(WidgetContext);
-    console.log('state', state);
+    console.log("state", state);
 
     useEffect(() => {
-        dispatch({ type: ACTIONS.UPDATE_THEME, payload: 'dark' });
+        dispatch({ type: ACTIONS.UPDATE_THEME, payload: "dark" });
     }, []);
 
     return <div>{state.theme}</div>;
